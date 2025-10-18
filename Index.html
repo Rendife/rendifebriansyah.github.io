@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rendi Febriansyah — Portfolio v2</title>
+  <meta name="description" content="Interactive portfolio — warm yellow & orange theme" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Progress bar -->
+  <div id="progress"></div>
+
+  <!-- Canvas for subtle particles/parallax -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Header -->
+  <header id="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <div class="logo">RF</div>
+        <div class="name">Rendi Febriansyah</div>
+      </div>
+      <nav class="nav">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="menu-toggle" class="menu-btn" aria-label="menu">☰</button>
+    </div>
+  </header>
+
+  <!-- mobile nav -->
+  <div id="mobile-nav" class="mobile-nav">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero section">
+      <div class="container">
+        <div class="hero-left">
+          <h1 class="hero-title">
+            <span class="hi">Hi, I'm</span>
+            <span class="name-large">Rendi Febriansyah</span>
+          </h1>
+          <p class="hero-sub">I turn ideas into visuals that feel friendly, warm and memorable.</p>
+
+          <div class="hero-phrases">
+            <span class="phrase" data-phrase="Designer.">Designer.</span>
+            <span class="phrase" data-phrase="Brand Builder.">Brand Builder.</span>
+            <span class="phrase" data-phrase="Visual Storyteller.">Visual Storyteller.</span>
+          </div>
+
+          <div class="hero-ctas">
+            <a href="#projects" class="btn primary">See my work</a>
+            <a href="#contact" class="btn ghost">Let's talk</a>
+          </div>
+
+          <div class="note">Let’s create something awesome together!</div>
+        </div>
+
+        <aside class="hero-right">
+          <div class="card profile-card">
+            <div class="avatar" id="avatar" aria-hidden="true"></div>
+            <div class="roles">
+              <span class="chip">Designer</span>
+              <span class="chip">Branding</span>
+            </div>
+            <p class="mini">Creative personality — friendly, playful and purposeful design.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section white">
+      <div class="container reveal">
+        <div class="grid-2">
+          <div>
+            <h2>About</h2>
+            <p>I craft visual identities, packaging, and web experiences for small brands and creative projects. My approach mixes playful energy with clear structure — design that communicates with warmth.</p>
+            <p class="muted">Available for freelance & collaboration. Based in Indonesia.</p>
+          </div>
+          <aside class="card">
+            <h4>Toolkit</h4>
+            <div class="tools">
+              <span>Figma</span><span>Illustrator</span><span>Photoshop</span><span>HTML/CSS</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section soft-yellow">
+      <div class="container reveal">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <!-- cards: replace with your content -->
+          <article class="project card interactive">
+            <div class="thumb">Pakai.in</div>
+            <h3>Pakai.in — Brand System</h3>
+            <p>Visual identity and packaging for a local printing brand.</p>
+            <div class="project-links">
+              <a href="https://rendi.com" target="_blank" rel="noreferrer">view</a>
+              <a href="https://rendi.com" target="_blank" rel="noreferrer">github</a>
+            </div>
+          </article>
+
+          <article class="project card interactive">
+            <div class="thumb">Kopi</div>
+            <h3>Kopi Lokal — Packaging</h3>
+            <p>Label and packaging system for an artisanal coffee brand.</p>
+            <div class="project-links">
+              <a href="https://rendi.com" target="_blank" rel="noreferrer">view</a>
+              <a href="https://rendi.com" target="_blank" rel="noreferrer">github</a>
+            </div>
+          </article>
+
+          <article class="project card interactive">
+            <div class="thumb">Poster</div>
+            <h3>Poster Series</h3>
+            <p>Event posters with bold type and playful composition.</p>
+            <div class="project-links">
+              <a href="https://rendi.com" target="_blank" rel="noreferrer">view</a>
+              <a href="https://rendi.com" target="_blank" rel="noreferrer">github</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section white">
+      <div class="container reveal">
+        <h2>Experience</h2>
+        <ul class="timeline">
+          <li>
+            <strong>Lead Designer — Studio Kreatif</strong>
+            <span class="muted">2023 — Present</span>
+            <p>Leading brand projects and art direction for campaigns and packaging.</p>
+          </li>
+          <li>
+            <strong>Freelance Designer</strong>
+            <span class="muted">2019 — 2023</span>
+            <p>Worked with cafes, clothing labels, and community events.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section soft-orange">
+      <div class="container reveal">
+        <h2>Contact</h2>
+        <div class="grid-2">
+          <div class="card">
+            <p>Want to collaborate or ask something? Send a message — I’ll reply soon.</p>
+            <form id="contactForm">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Your email" required>
+              <textarea name="message" rows="4" placeholder="Message"></textarea>
+              <div class="form-actions">
+                <button class="btn primary" type="submit">Send message</button>
+                <button class="btn ghost" type="button" onclick="openMail()">Email me</button>
+              </div>
+              <div id="formNotice" class="muted small" aria-live="polite" style="display:none">Message sent — thanks! 💛</div>
+            </form>
+          </div>
+
+          <aside class="card">
+            <h4>Say hi</h4>
+            <div class="socials">
+              <a href="https://rendi.com" target="_blank" rel="noreferrer" class="social">Instagram</a>
+              <a href="https://rendi.com" target="_blank" rel="noreferrer" class="social">Behance</a>
+              <a href="https://rendi.com" target="_blank" rel="noreferrer" class="social">LinkedIn</a>
+            </div>
+            <p class="muted">Email: <strong>rendi@rendi.com</strong></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <footer class="section footer">
+      <div class="container">
+        <small>© <span id="year"></span> Rendi Febriansyah — Made with ☕ and good vibes</small>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

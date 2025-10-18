@@ -1,0 +1,137 @@
+/* Portfolio v2 — style.css
+   Theme: warm yellow -> orange, friendly & playful
+*/
+
+:root{
+  --bg:#fffaf6;
+  --white:#ffffff;
+  --muted:#6b6b6b;
+  --yellow:#ffb703;
+  --orange:#fb8500;
+  --accent:#ff7a00;
+  --card:#fffefc;
+  --radius:14px;
+  --maxw:1100px;
+  --text:#222;
+  --glass: rgba(255,255,255,0.6);
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.5;
+  scroll-behavior:smooth;
+}
+
+/* Progress */
+#progress{
+  position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--orange),var(--yellow));width:0%;z-index:9999;box-shadow:0 2px 8px rgba(251,133,0,0.12);
+}
+
+/* Canvas (bg particles) */
+#bg-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:-2;}
+
+/* Header */
+#site-header{position:fixed;top:18px;left:0;right:0;z-index:999;padding:0 20px;transition:all .28s ease}
+#site-header .wrap{max-width:var(--maxw);margin:0 auto;background:var(--card);display:flex;align-items:center;justify-content:space-between;padding:10px 18px;border-radius:999px;box-shadow:0 18px 40px rgba(251,133,0,0.06)}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{background:var(--yellow);width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#4b2200;box-shadow:0 8px 24px rgba(251,133,0,0.12)}
+.name{font-weight:700}
+.nav a{color:var(--text);text-decoration:none;margin-left:12px;font-weight:600;padding:8px;border-radius:10px}
+.nav a:hover{background:rgba(255,183,3,0.12)}
+
+/* shrink header when scrolling */
+#site-header.shrink .wrap{padding:8px 14px;transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.06)}
+
+/* mobile menu toggle */
+.menu-btn{display:none;background:transparent;border:0;font-size:20px}
+
+/* Main layout */
+.container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+/* SECTION common */
+.section{padding:72px 0}
+.section.white{background:var(--white)}
+.section.soft-yellow{background:linear-gradient(180deg,var(--yellow),#fff7ea)}
+.section.soft-orange{background:linear-gradient(180deg,var(--orange),#fff5ec)}
+.section .container{padding-top:8px;padding-bottom:8px}
+
+/* HERO */
+.hero{min-height:86vh;display:flex;align-items:center}
+.hero .container{display:flex;gap:28px;align-items:center}
+.hero-left{flex:1;max-width:720px}
+.hero-title{font-size:clamp(28px,6vw,56px);margin:0;line-height:1}
+.hero-title .hi{display:block;font-weight:400;font-size:20px;color:var(--muted)}
+.name-large{color:var(--orange);font-weight:700}
+.hero-sub{margin:18px 0;font-size:18px;color:var(--muted)}
+.hero-phrases{display:flex;gap:10px;margin-top:8px;align-items:center;flex-wrap:wrap}
+.phrase{background:var(--white);padding:8px 12px;border-radius:999px;font-weight:600;color:var(--accent);box-shadow:0 8px 20px rgba(251,133,0,0.08)}
+
+/* CTAs */
+.btn{display:inline-block;padding:12px 18px;border-radius:12px;font-weight:700;text-decoration:none;border:0;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
+.btn.primary{background:var(--orange);color:#fff;box-shadow:0 12px 30px rgba(251,133,0,0.12)}
+.btn.primary:hover{transform:translateY(-6px)}
+.btn.ghost{background:transparent;border:2px solid rgba(0,0,0,0.06);color:var(--text)}
+
+/* Profile card */
+.profile-card{width:260px;padding:18px;border-radius:14px;background:var(--card);box-shadow:0 18px 40px rgba(0,0,0,0.05)}
+.avatar{width:140px;height:140px;border-radius:12px;margin:0 auto;background:linear-gradient(135deg,var(--yellow),var(--orange));display:block;box-shadow:0 10px 30px rgba(251,133,0,0.08);animation:avatar-pulse 4s ease-in-out infinite}
+@keyframes avatar-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+.roles{display:flex;gap:8px;justify-content:center;margin-top:12px}
+.chip{background:#fff;padding:6px 10px;border-radius:10px;font-weight:600;color:var(--accent)}
+
+/* Grid helpers */
+.grid-2{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
+.card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.04)}
+.muted{color:var(--muted)}
+.small{font-size:0.9rem}
+
+/* Tools */
+.tools{display:flex;flex-wrap:wrap;gap:8px}
+.tools span{background:#fff;padding:8px 10px;border-radius:8px;border:1px solid rgba(0,0,0,0.04)}
+
+/* Projects grid */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:18px}
+.project.card{padding:14px;border-radius:12px;transition:transform .28s cubic-bezier(.2,.9,.2,1),box-shadow .28s}
+.project.card .thumb{height:140px;border-radius:10px;background:linear-gradient(135deg,var(--yellow),var(--orange));display:flex;align-items:center;justify-content:center;font-weight:700;color:#4b2200;font-size:18px;margin-bottom:10px}
+.project.card:hover{transform:translateY(-12px) rotate(-1deg);box-shadow:0 30px 60px rgba(251,133,0,0.12)}
+
+/* project links */
+.project-links a{margin-right:12px;color:var(--accent);text-decoration:none;font-weight:600}
+
+/* Timeline */
+.timeline{list-style:none;padding-left:0;max-width:760px;margin:18px 0 0}
+.timeline li{margin-bottom:22px}
+.timeline .muted{display:block;margin-top:6px;color:var(--muted)}
+
+/* Contact form */
+form input, form textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);margin-bottom:10px;font-size:15px}
+.form-actions{display:flex;gap:10px}
+
+/* Socials */
+.socials{display:flex;gap:8px;margin-top:10px}
+.socials .social{display:inline-block;padding:10px 12px;border-radius:10px;background:#fff;border:1px solid rgba(0,0,0,0.04);text-decoration:none;color:var(--accent);font-weight:700}
+
+/* Footer */
+.footer{padding:20px 0;text-align:center;color:var(--muted)}
+
+/* Reveal helper */
+.reveal{opacity:0;transform:translateY(18px);transition:all .7s cubic-bezier(.2,.9,.2,1)}
+
+/* Responsive */
+@media (max-width:980px){
+  .grid-2{grid-template-columns:1fr}
+  #site-header{top:10px}
+  .menu-btn{display:block}
+  .nav{display:none}
+}
+@media (max-width:640px){
+  .hero .container{flex-direction:column;align-items:center;text-align:center}
+  .profile-card{width:100%}
+}
